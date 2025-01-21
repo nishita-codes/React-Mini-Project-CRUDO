@@ -6,11 +6,15 @@ import { Form } from "./Form";
 export const Post = () => {
     // console.log(getPost ());
     const [data, setData] = useState([]);
+    const [updateDataApi, setUpdateDataApi] =useState({});
+    
+    
     const getPostData = async () => {
         const res = await getPost();
         console.log(res.data);
         setData(res.data);
     }
+
     useEffect(() => {
         getPostData();
     }, []);
@@ -31,12 +35,15 @@ export const Post = () => {
         }
 
 
-    }
+    };
+
+    const handleUpdatePost=(curElem)=> setUpdateDataApi(curElem);
+
 
     return (
         <>
-            <section>
-                <Form data={data}  setData={setData}/>
+            <section className="section" >
+             <Form data={data}  setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi}/>
             </section>
             <section className="section-post">
                 <ol>
@@ -44,10 +51,10 @@ export const Post = () => {
                         data.map((curElem) => {
                             const { id, body, title } = curElem;
                             return (
-                                <li keys={id}>
+                                <li key={id}>
                                     <p>Title:{title}</p>
                                     <p>Body:{body}</p>
-                                    <button>Edit</button>
+                                    <button onClick={() => handleUpdatePost(curElem)} >Edit</button>
                                     <button className="btn-delete" onClick={() => handleDeletePost(id)}>Delete</button>
                                 </li>
                             )

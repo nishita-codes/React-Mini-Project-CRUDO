@@ -68,3 +68,23 @@ body{
         }
     }
  }
+  .section{
+     color: #212f3d;
+    background-color:#212f3d ;
+  }
+ .section-form{
+    color:#212f3c;
+     padding:1.3rem;
+    border-radius:0.6rem;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    align-items: center;
+
+ }
+
+ div input{
+    color:#212f3c;
+  padding: 7px ;
+  margin: 0px 7px;
+ }
