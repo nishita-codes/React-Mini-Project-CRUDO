@@ -1,11 +1,11 @@
 
 import { Post } from "./Components/Posts";
 
-const App =() =>{
-   return (
-  <section className="main-section">
-  <Post />
-  </section>
+const App = () => {
+  return (
+    <section className="main-section">
+      <Post />
+    </section>
   )
 };
 

@@ -6,9 +6,9 @@ import { Form } from "./Form";
 export const Post = () => {
     // console.log(getPost ());
     const [data, setData] = useState([]);
-    const [updateDataApi, setUpdateDataApi] =useState({});
-    
-    
+    const [updateDataApi, setUpdateDataApi] = useState({});
+
+
     const getPostData = async () => {
         const res = await getPost();
         console.log(res.data);
@@ -37,13 +37,13 @@ export const Post = () => {
 
     };
 
-    const handleUpdatePost=(curElem)=> setUpdateDataApi(curElem);
+    const handleUpdatePost = (curElem) => setUpdateDataApi(curElem);
 
 
     return (
         <>
             <section className="section" >
-             <Form data={data}  setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi}/>
+                <Form data={data} setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi} />
             </section>
             <section className="section-post">
                 <ol>
